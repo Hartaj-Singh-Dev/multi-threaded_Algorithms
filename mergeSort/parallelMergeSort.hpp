@@ -4,6 +4,7 @@
 #include <vector>
 #include<thread>
 #include<mutex>
+#include<algorithm>
 #include<iostream>
 
 using namespace std;

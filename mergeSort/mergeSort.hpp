@@ -2,6 +2,8 @@
 #define MERGESORT_H
 
 #include<vector>
+#include<thread>
+#include <cstdlib>
 
 class MergeSort{
     private:
