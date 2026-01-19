@@ -1,14 +1,14 @@
-#include "4threadMerge.hpp"
-#include "parallelMergeSort.hpp"
+#include "threadedMergeSort.hpp"
 #include <cstdlib>
 #include <thread>
 
 using namespace std;
-threadedMergeSort::threadedMergeSort(vector<int>* nums):nums(nums){ };
 
-threadedMergeSort::~threadedMergeSort(){};
+ThreadedMergeSort::ThreadedMergeSort(vector<int>* nums):nums(nums){ };
 
-void threadedMergeSort::recursiveSort(int left , int right , int depth){
+ThreadedMergeSort::~ThreadedMergeSort(){};
+
+void ThreadedMergeSort::recursiveSort(int left , int right , int depth){
     const int THRESHOLD = 5000;
     const int MAX_DEPTH = 2;
         
@@ -56,13 +56,13 @@ void threadedMergeSort::recursiveSort(int left , int right , int depth){
         
 };
 
-void ParallelMergeSort::sort(){
-    if(nums->empty()){
+void ThreadedMergeSort::sort(){
+    if((*nums).size() == 0){
         exit(1);
     }
     
     thread mainThread([this] {
-        this->recursiveSort(0 , nums->size()- 1 , 0);
+        this->recursiveSort(0 , (*nums).size() - 1 , 0);
     });
     
     mainThread.join();
