@@ -1,7 +1,7 @@
 #ifndef THREADEDMERGESORT_H
 #define THREADEDMERGESORT_H
 
-// #pragma once // this can be only included once
+#pragma once // this can be only included once
 #include <vector>
 #include<thread>
 
